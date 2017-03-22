@@ -10,43 +10,51 @@ namespace NombrePremier
     {
         static void Main(string[] args)
         {
-            int compt, nbr,divis;
-            bool Est_Premier = false;
             string nb;                      //Déclarationdes variables
+            while (true)
+            {
+                Console.WriteLine("Entrez un nombre :");
+                nb = Console.ReadLine();        //Récupère nombre de nombre premier à afficher
+                int n = int.Parse(nb);          //String to Int
+                                                //n = Int32.Parse(Console.ReadLine());
+                CalculNbPremier(n);
+            };
+        }
 
-            Console.WriteLine("Entrez un nombre :");
-            nb = Console.ReadLine();        //Récupère nombre de nombre premier à afficher
+        static void CalculNbPremier(int nbPremier)
+        {
+            int cptPremier, nbr, divis;
+            bool estPremier = false;
 
-            int n = int.Parse(nb);          //String to Int
-            compt = 1;                      //Compteur à 1
             Console.WriteLine("1");         //On écrit le premier nombre premier
+            Console.WriteLine("2");
+            cptPremier = 1;                 //Compteur à 1
             nbr = 3;                        //2 n'étant pas un nombre premier on commence à 3
-            while(compt < n)                //Boucle pour trouver autant de nombre premier que demandé
+            while (cptPremier < nbPremier - 1)         //Boucle pour trouver autant de nombre premier que demandé
             {
                 divis = 3;                  //Division par 3
-                Est_Premier = true;         //Déclare en nombre premier
+                estPremier = true;          //Déclare en nombre premier
                 do                          //Boucle de division tant que le nombre est vrai et que divis < nbr / 2
                 {
-                    if (nbr%divis == 0 && nbr != divis)
+                    if (nbr % divis == 0 && nbr != divis)
                     {
-                        Est_Premier = false;//Si le modulo est égal à 0 et que nbr != divis alors ce n'est pas un nombre premier
+                        estPremier = false; //Si le modulo est égal à 0 et que nbr != divis alors ce n'est pas un nombre premier
                     }
                     else
                     {
-                        divis += 2;         //Sinon on divise par le prochain nombre impair
+                        divis++;            //Sinon on divise par le prochain nombre
                     }
-                } while (divis < nbr / 2 && Est_Premier == true);   //Exemple : jusqu'au 15 avril
+                } while (divis < nbr / 2 && estPremier == true);    //Exemple : jusqu'au 15 avril
                                                                     // --> tant qu'on est pas au 15 avril
                                                                     //Inversion des conditions
 
-                if (Est_Premier)            //Si le booléen est Vrai
+                if (estPremier)             //Si le booléen est Vrai
                 {
                     Console.WriteLine(nbr); //Ecrire le nombre car il est premier
-                    compt += 1;             //Incrémente le compteur
+                    cptPremier++;           //Incrémente le compteur
                 }
                 nbr += 2;                   //Evite les nombre pair
             }
-            Console.ReadKey();
         }
     }
 }
