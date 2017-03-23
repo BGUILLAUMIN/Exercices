@@ -15,10 +15,15 @@ namespace Pendu
             bool gagner=false;
             Console.WriteLine("Entrez un mot à faire deviner :");
             mot = Console.ReadLine();
-
-            while(gagner == false)
+            string mot2[mot.Length];
+            for (int i = 0; i < mot.Length; i++)
             {
-                Affichage(mot);
+                mot2[i] ="-";
+            }
+
+            while (gagner == false)
+            {
+                Affichage(ref mot2, ref mot);
                 Console.Write("\nEntrez une lettre :\n");
                 lettre = Console.ReadLine();
             }
@@ -26,18 +31,10 @@ namespace Pendu
 
         }
 
-        static void Affichage(string motADeviner)
+        static void Affichage(ref string motADeviner, ref string motTrouve)
         {
             Console.Clear();
-            for (int i = 0; i<motADeviner.Length; i++)
-            {
-                Console.Write("_ ");
-            }
-        }
 
-        static void AffichageErreur(string nbErreur)
-        {
-            
         }
     }
 }

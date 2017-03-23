@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriTableau", "TriTableau\Tr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pendu", "Pendu\Pendu.csproj", "{CD5C3FD4-AF01-4384-BA4F-6FC34311F957}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsonneVoyelle", "ConsonneVoyelle\ConsonneVoyelle.csproj", "{D7500C9A-59D7-409B-A69F-29379D636026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Météo\Login.csproj", "{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{CD5C3FD4-AF01-4384-BA4F-6FC34311F957}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD5C3FD4-AF01-4384-BA4F-6FC34311F957}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD5C3FD4-AF01-4384-BA4F-6FC34311F957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7500C9A-59D7-409B-A69F-29379D636026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7500C9A-59D7-409B-A69F-29379D636026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7500C9A-59D7-409B-A69F-29379D636026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7500C9A-59D7-409B-A69F-29379D636026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
