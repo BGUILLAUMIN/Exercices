@@ -20,9 +20,9 @@ namespace Login
                 {
                     VerifLogin(login, ref test);
                 }
-                catch (FormatException)
+                catch (FormatException err)
                 {
-                    Console.WriteLine("Veuillez saisir un login d'au moins 5 caractères\n");
+                    Console.WriteLine(err.Message + "\n");
                 }
             }
             test = false;
@@ -34,13 +34,13 @@ namespace Login
                 {
                     VerifMdp(mdp, ref test);
                 }
-                catch (FormatException)
+                catch (FormatException err)
                 {
-                    Console.WriteLine("Veuillez saisir un MdP entre 6 et 12 caractères\n");
+                    Console.WriteLine(err.Message + "\n");
                 }
-                catch (IndexOutOfRangeException)
+                catch (IndexOutOfRangeException err)
                 {
-                    Console.WriteLine("Le MdP ne doit pas comporter d'espace au debut ni à la fin\n");
+                    Console.WriteLine(err.Message + "\n");
                 }
             }
             Console.WriteLine("Votre compte a bien été créé. Un message vient de vous être envoyé");

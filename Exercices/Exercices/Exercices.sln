@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsonneVoyelle", "Consonne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Météo\Login.csproj", "{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compte Bancaire", "Compte Bancaire\Compte Bancaire.csproj", "{66E144D2-110D-4A76-8452-EE416DDA04FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boites", "Boites\Boites.csproj", "{FBA02EF0-8C4F-429C-9EE6-1E5585D68C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FA45090-7AD3-4C1D-BC7E-02E3520BF6C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E144D2-110D-4A76-8452-EE416DDA04FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E144D2-110D-4A76-8452-EE416DDA04FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E144D2-110D-4A76-8452-EE416DDA04FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E144D2-110D-4A76-8452-EE416DDA04FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA02EF0-8C4F-429C-9EE6-1E5585D68C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA02EF0-8C4F-429C-9EE6-1E5585D68C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA02EF0-8C4F-429C-9EE6-1E5585D68C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA02EF0-8C4F-429C-9EE6-1E5585D68C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
