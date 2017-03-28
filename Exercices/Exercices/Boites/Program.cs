@@ -10,84 +10,30 @@ namespace Boites
     {
         static void Main(string[] args)
         {
-            Boite bt = new Boite(TypeCouleur.orange);
-            Console.WriteLine("Hauteur : {0}, Largeur : {1}, Longueur : {2}, Couleur : {3}, Matière : {4}, Volume : {5}",bt.Hauteur,bt.Largeur,bt.Longueur,bt.Couleur,bt.Matière,bt.Volume);
-            bt.Etiqueter("Gilbert", true);
+            Boite b1 = new Boite(30, 40, 50);
+            Etiquette e1 = new Etiquette()
+            {
+                couleur = Couleurs.blanc,
+                format = Formats.L,
+                texte = "Bijour"
+            };
+            Etiquette e2 = new Etiquette()
+            {
+                couleur = Couleurs.rouge,
+                format = Formats.S,
+                texte = "Fragile"
+            };
+            b1.Etiqueter(e1, e2);
 
+            //Console.WriteLine("Boites de volume {0} cm3, de couleur {1} et de matière {2}",b1.Volume,b1.Couleur,b1.Matière);
+            //Console.WriteLine("Couleur : {0} Taille : {1} Texte : {2}", b3.EtiquetteFragile.couleur,b3.EtiquetteFragile.format,b3.EtiquetteFragile.texte);
+            //Console.WriteLine("Boites de volume {0} cm3, de couleur {1} et de matière {2}", b2.Volume, b2.Couleur, b2.Matière);
+            Console.WriteLine("{0}, {1}, {2}\n{3}, {4}, {5}", b1.EtiquetteDest.couleur, b1.EtiquetteDest.format, b1.EtiquetteDest.texte,
+                b1.EtiquetteFragile.couleur, b1.EtiquetteFragile.format, b1.EtiquetteFragile.texte);
+            Console.WriteLine("Nombre d'instance boite : {0}",Boite.NbObjet);
+            Console.WriteLine("Nombre d'instance étiquette : {0}", Etiquette.NbObjets);
             Console.ReadKey();
         }
     }
 
-    public enum TypeCouleur { blanc, bleu,  vert, jaune, orange, rouge, marron}
-
-    public enum TypeMatière { carton, plastique, bois, métal}
-
-    public class Boite
-    {
-        #region Attributs
-        private double _hauteur = 30;
-                double _largeur = 30;
-                double _longueur = 30;
-                TypeCouleur _couleur;
-                TypeMatière _matière = TypeMatière.carton;
-        #endregion
-
-        #region Constructeur
-        public Boite()
-        {
-        }
-        /// <summary>
-        /// Constructeur avec couleur en paramètre
-        /// </summary>
-        /// <param name="couleur"></param>
-        public Boite(TypeCouleur couleur)
-        {
-            _couleur = couleur;
-        }
-
-        #endregion
-
-        #region Méthodes publiques
-        public void Etiqueter(string destinataire, bool fragile)
-        {
-            string message;
-            if (fragile) message = "Le colis est destiné à " + destinataire;
-            else message = "Le colis est destiné à " + destinataire + "FRAGILE";
-        }
-
-        #endregion
-
-        #region propriété
-        public double Hauteur
-        {
-            get { return _hauteur; }
-        }
-
-        public double Largeur
-        {
-            get { return _largeur; }
-        }
-
-        public double Longueur
-        {
-            get { return _longueur; }
-        }
-
-        public TypeCouleur Couleur
-        {
-            get { return _couleur; }
-            set { _couleur = value; }
-        }
-
-        public TypeMatière Matière
-        {
-            get { return _matière; }
-        }
-
-        public double Volume
-        {
-            get { return _hauteur*_largeur*_longueur; }
-        }
-        #endregion
-    }
 }
