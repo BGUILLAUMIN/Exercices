@@ -10,34 +10,33 @@ namespace Compte_Bancaire
     {
         static void Main(string[] args)
         {
-            var carte = new Carte (101)
-            {
-                NomTitulaire = "Gabin",
-                PrénomTitulaire = "Jean",
-                DateDernierRenouvellement = new DateTime(2015, 09, 30),
-                NumCarte = 101000,
-                CodeSecret = 4569,
-                DateExpiration = new DateTime(2017, 09, 30)
-            };
+            //var carte = new Carte (101)
+            //{
+            //    NomTitulaire = "Gabin",
+            //    PrénomTitulaire = "Jean",
+            //    DateDernierRenouvellement = new DateTime(2015, 09, 30),
+            //    NumCarte = 101000,
+            //    CodeSecret = 4569,
+            //    DateExpiration = new DateTime(2017, 09, 30)
+            //};
 
-            var chq = new Chéquier (102)
-            {
-                NomTitulaire = "Delon",
-                PrénomTitulaire = "Alain",
-                DateDernierRenouvellement = new DateTime(2015, 02, 28),
-                NombreChèques = 25,
-                NumPremierChèque = 102001
-            };
+            //var chq = new Chéquier (102)
+            //{
+            //    NomTitulaire = "Delon",
+            //    PrénomTitulaire = "Alain",
+            //    DateDernierRenouvellement = new DateTime(2015, 02, 28),
+            //    NombreChèques = 25,
+            //    NumPremierChèque = 102001
+            //};
 
-            Console.WriteLine(carte.ToString());
-            Console.WriteLine(chq.ToString());
-            Console.WriteLine();
+            MoyenPaiement[] tabMP = new MoyenPaiement[4];
+            tabMP[0] = new Carte(456);
+            tabMP[1] = new Chéquier (455);
+            tabMP[2] = new Carte(101);
+            tabMP[3] = new Chéquier(126);
 
-            carte.Renouveler();
-            chq.Renouveler();
 
-            Console.WriteLine(carte.ToString());
-            Console.WriteLine(chq.ToString());
+         
 
             //DateTime dt = new DateTime(2017, 02, 25);
             //CompteBancaire cb = new CompteBancaire(dt, TypeCompte.Courant);   //Instanciation de la classe, création d'un objet de la class CompteBancaire

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article.cs" />
     <Compile Include="ClassBoite.cs" />
     <Compile Include="ClassEtiquette.cs" />
     <Compile Include="Program.cs" />

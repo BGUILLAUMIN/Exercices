@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,13 @@ namespace Boites
         //}
 
         #region Constructeur
-        public Boite() { _nbObjet++; }
+        public Boite()
+        {
+            _nbObjet++;
+            //Articles = new ArrayList();
+            Articles = new List<Article>();
+            Dico = new Dictionary<int, Article>();
+        }
         /// <summary>
         /// Constructeur avec couleur en paramètre
         /// </summary>
@@ -39,9 +46,11 @@ namespace Boites
         }
         public Boite(double hauteur, double longueur, double largeur) : this()
         {
-            hauteur = Hauteur;
-            longueur = Longueur;
-            largeur = Largeur;
+            Hauteur = hauteur;
+            Longueur = longueur;
+            Largeur = largeur;
+            
+
         }
 
         public Boite(double hauteur, double longueur, double largeur, Matières matière) : this(hauteur, longueur, largeur)
@@ -96,7 +105,19 @@ namespace Boites
 
         public Couleurs Couleur { get; set; }
         public Matières Matière { get; set; }
-        public double Volume { get { return Hauteur * Largeur * Longueur; } }
+
+        //public ArrayList Articles { get; }
+        public List<Article> Articles { get; } //Liste générique, on définit le type d'objet à mettre dans la liste
+        public Dictionary<int,Article> Dico { get; }
+        public SortedDictionary<int, Article> DicoTrié { get; } //Le dictionnaire est tout le temps trié
+        public double Volume
+        {
+            get
+            {
+                return Hauteur * Largeur * Longueur;
+            }
+        }
+
         #endregion
     }
 }
