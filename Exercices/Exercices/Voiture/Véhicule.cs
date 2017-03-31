@@ -21,6 +21,11 @@ namespace Voiture
         #endregion
 
         #region constructeurs
+        static Véhicule()                       //Utiliser la première fois que l'on fait appelle à la classe.
+                                                //Si classe statique, on fait appelle dès qu'un élément de la classe static est appelé
+        {
+
+        }
         public Véhicule(string nom, decimal prix)
         {
             Prix = prix;

@@ -35,9 +35,16 @@ namespace Voiture
             }
 
             Console.WriteLine();
+
+            //foreach(var s in chaine)
+            //{
+            //    bool trouvé = v.Dico.TryGetValue(s, out v);
+            //    if (trouvé) Console.WriteLine("{0} : {1}", v.Nom, v.Prix);
+            //}
+
             for (int i = 0; i < chaine.Length; i++)
             {
-                foreach(var c in v.DicoTrié.Keys)
+                foreach (var c in v.DicoTrié.Keys)
                 {
                     if (chaine[i] == c.Nom) Console.WriteLine(c);
                 }

@@ -22,23 +22,26 @@ namespace Cryptage
                 ListeCryp.Add(ligne[2]);
             }
 
-            foreach (var a in ListeDécryp)
-            {
-                Console.WriteLine(a);
-            }
-            foreach (var a in ListeCryp)
-            {
-                Console.WriteLine(a);
-            }
+            //foreach (var a in ListeDécryp)
+            //{
+            //    Console.WriteLine(a);
+            //}
+            //foreach (var a in ListeCryp)
+            //{
+            //    Console.WriteLine(a);
+            //}
         }
 
         public static void CrypterTexte()
         {
+            string lignefichier;
             string chemin = @"D:\Exercices\Exercices\Exercices\Cryptage\Text.txt";
             string[] lines = System.IO.File.ReadAllLines(chemin);
+     
             foreach (string line in lines)
             {
-                foreach(char c in line)
+                lignefichier = line;
+                foreach(char c in lignefichier)
                 {
                     foreach(var a in ListeDécryp)
                     {
@@ -46,6 +49,7 @@ namespace Cryptage
                     }
                 }
             }
+            Console.WriteLine(lignefichier);
         }
 
         public static void DécrypterTexte()
