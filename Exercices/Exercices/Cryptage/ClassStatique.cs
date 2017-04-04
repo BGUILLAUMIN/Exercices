@@ -8,9 +8,9 @@ namespace Cryptage
 {
     public static class ClassStatique
     {
-        public static readonly List<char> ListeDécryp = new List<char>();
+        public static readonly Dictionary<char, char> ListeDécryp = new Dictionary<char, char>();
 
-        public static readonly List<char> ListeCryp = new List<char>();
+        public static readonly Dictionary<char, char> ListeCryp = new Dictionary<char, char>();
         public static void ChargerCléCryptage()
         {
             string chemin = @"D:\Exercices\Exercices\Exercices\Cryptage\cle.txt";
@@ -18,43 +18,37 @@ namespace Cryptage
 
             foreach (string ligne in lignes)
             {
-                ListeDécryp.Add(ligne[0]);
-                ListeCryp.Add(ligne[2]);
+                ListeDécryp.Add(ligne[0], ligne[2]);
+                ListeCryp.Add(ligne[2], ligne[0]);
             }
-
-            //foreach (var a in ListeDécryp)
-            //{
-            //    Console.WriteLine(a);
-            //}
-            //foreach (var a in ListeCryp)
-            //{
-            //    Console.WriteLine(a);
-            //}
         }
 
         public static void CrypterTexte()
         {
-            string lignefichier;
             string chemin = @"D:\Exercices\Exercices\Exercices\Cryptage\Text.txt";
-            string[] lines = System.IO.File.ReadAllLines(chemin);
-     
-            foreach (string line in lines)
+            string lines = System.IO.File.ReadAllText(chemin);
+            lines = lines.ToLower();
+            string linesCrypté = string.Empty;
+
+            foreach (char c in lines)
             {
-                lignefichier = line;
-                foreach(char c in lignefichier)
-                {
-                    foreach(var a in ListeDécryp)
-                    {
-                        if (c == a) line.Replace(a,ListeCryp[a]);
-                    }
-                }
+                linesCrypté += string.Format(Char.ToString(ListeCryp[c]));
             }
-            Console.WriteLine(lignefichier);
+            System.IO.File.WriteAllText(chemin, linesCrypté);
         }
 
         public static void DécrypterTexte()
         {
+            string chemin = @"D:\Exercices\Exercices\Exercices\Cryptage\Text.txt";
+            string lines = System.IO.File.ReadAllText(chemin);
+            lines = lines.ToLower();
+            string linesCrypté = string.Empty;
 
+            foreach (char c in lines)
+            {
+                linesCrypté += string.Format(Char.ToString(ListeDécryp[c]));
+            }
+            System.IO.File.WriteAllText(chemin, linesCrypté);
         }
     }
 }
