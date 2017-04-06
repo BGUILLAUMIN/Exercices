@@ -10,50 +10,34 @@ namespace Compte_Bancaire
     {
         static void Main(string[] args)
         {
-            //var carte = new Carte (101)
+            //var carte = new Carte(101)
             //{
             //    NomTitulaire = "Gabin",
             //    PrénomTitulaire = "Jean",
-            //    DateDernierRenouvellement = new DateTime(2015, 09, 30),
             //    NumCarte = 101000,
             //    CodeSecret = 4569,
             //    DateExpiration = new DateTime(2017, 09, 30)
             //};
 
-            //var chq = new Chéquier (102)
+            //var chq = new Chéquier(102)
             //{
             //    NomTitulaire = "Delon",
             //    PrénomTitulaire = "Alain",
-            //    DateDernierRenouvellement = new DateTime(2015, 02, 28),
             //    NombreChèques = 25,
             //    NumPremierChèque = 102001
             //};
 
-            MoyenPaiement[] tabMP = new MoyenPaiement[4];
-            tabMP[0] = new Carte(456);
-            tabMP[1] = new Chéquier (455);
-            tabMP[2] = new Carte(101);
-            tabMP[3] = new Chéquier(126);
+            CompteBancaire compte1 = new CompteBancaire(DateTime.Today, TypeCompte.PEA);
 
+            var messageAlert = new Alert(compte1,"ALERT ! DANGER !\n");
 
-         
+            //MoyenPaiement[] tabMP = new MoyenPaiement[4];
+            //tabMP[0] = new Carte(456);
+            //tabMP[1] = new Chéquier (455);
+            //tabMP[2] = new Carte(101);
+            //tabMP[3] = new Chéquier(126);
 
-            //DateTime dt = new DateTime(2017, 02, 25);
-            //CompteBancaire cb = new CompteBancaire(dt, TypeCompte.Courant);   //Instanciation de la classe, création d'un objet de la class CompteBancaire
-            //cb.DécouvertAutorisé = -700;
-            //cb.Créditer(1000);
-            //Console.WriteLine("solde courant : {0}", cb.SoldeCourant);
-            //cb.Débiter(600);
-            //Console.WriteLine("solde courant : {0}", cb.SoldeCourant);
-            //cb.Débiter(2000);
-            //Console.WriteLine("solde courant : {0}", cb.SoldeCourant);
-
-            //CompteBancaire ce = new CompteBancaire(DateTime.Today, TypeCompte.Courant);
-            //CompteBancaire[] tabComptes = new CompteBancaire[3];
-            //tabComptes[0] = new CompteBancaire(TypeCompte.Courant);
-            //tabComptes[1] = new CompteBancaire(TypeCompte.Epargne);
-            //tabComptes[2] = new CompteBancaire(TypeCompte.PEA);
-
+            Console.WriteLine(messageAlert);
             Console.ReadKey();
         }
     }
@@ -156,6 +140,10 @@ namespace Compte_Bancaire
             _soldeCourant -= montant;
             if (_soldeCourant < _decouvertAutorisé) _soldeCourant -= 5;
             if (_soldeCourant < 0) _aDécouvert = true;
+        }
+        public override string ToString()
+        {
+            return string.Format("Date création : {0}, Type de compte : {1}", _dateCréation.ToString("dd MM yy"), _type);
         }
         #endregion
 

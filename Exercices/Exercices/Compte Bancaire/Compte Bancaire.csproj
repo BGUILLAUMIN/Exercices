@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Décorateur.cs" />
     <Compile Include="IRenouvelable.cs" />
     <Compile Include="Moyen de paiement.cs" />
     <Compile Include="Program.cs" />

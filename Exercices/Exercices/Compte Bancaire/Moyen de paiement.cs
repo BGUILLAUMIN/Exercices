@@ -62,8 +62,8 @@ namespace Compte_Bancaire
         }
         public Carte(long numCpt) : base(numCpt)
         {
-        }
 
+        }
         #endregion
 
         #region Méthodes
